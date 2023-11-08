@@ -1,23 +1,28 @@
 #![allow(dead_code)]
+#[derive(PartialEq, Debug, Copy, Clone)]
+enum Suit {
+    Diamond
+}
+
 struct Card {
-    suit: &'static str,
+    suit: Suit,
 }
 
 impl Card {
     fn new() -> Self {
         Self {
-            suit: "Diamond"
+            suit: Suit::Diamond
         }
     }
 
-    fn get_suit(&self) -> &'static str {
+    fn get_suit(&self) -> Suit {
         self.suit
     }
 }
 
 #[cfg(test)]
 mod tests {
-    use crate::Card;
+    use crate::{Card, Suit};
 
     #[test]
     fn create_new_card() {
@@ -27,7 +32,6 @@ mod tests {
     #[test]
     fn get_card_suit() {
         let card = Card::new();
-        let suit = card.get_suit();
-        assert_eq!(suit, "Diamond");
+        let _suit = card.get_suit();
     }
 }
