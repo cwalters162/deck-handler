@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod card_tests {
-    use crate::card::card::{Card, Rank::*, Rank, Suit::*, Suit};
+    use crate::card::card::{Card, Rank, Rank::*, Suit, Suit::*};
 
     #[test]
     fn create_new_card() {
@@ -23,7 +23,6 @@ mod card_tests {
         let card = Card::new(Spades, Ace);
         let suit = card.get_suit();
         assert_eq!(suit, Spades);
-
     }
 
     #[test]
@@ -69,25 +68,22 @@ mod card_tests {
                 [
                     Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King,
                 ]
-                    .iter()
-                    .copied()
+                .iter()
+                .copied()
             }
         }
 
-        for rank in Rank::iterate()  {
+        for rank in Rank::iterate() {
             let card = Card::new(Spades, rank);
             assert_eq!(card, Card::new(Spades, rank));
-
         }
     }
 
     #[test]
     fn card_can_be_all_suits() {
         impl Suit {
-        fn iterate() -> impl Iterator<Item = Suit> {
-            [ Diamonds, Hearts, Spades, Clovers ]
-            .iter()
-            .copied()
+            fn iterate() -> impl Iterator<Item = Suit> {
+                [Diamonds, Hearts, Spades, Clovers].iter().copied()
             }
         }
         for suit in Suit::iterate() {

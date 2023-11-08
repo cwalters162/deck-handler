@@ -13,7 +13,6 @@ mod card {
     }
 
     impl Card {
-
         pub fn new(suit: Suit, rank: Rank) -> Self {
             Self { suit, rank }
         }
@@ -49,7 +48,7 @@ mod card {
                 1 => Suit::Diamonds,
                 2 => Suit::Hearts,
                 3 => Suit::Clovers,
-                _ => Suit::Spades
+                _ => Suit::Spades,
             }
         }
     }
@@ -87,7 +86,7 @@ mod card {
                 11 => Rank::Jack,
                 12 => Rank::Queen,
                 13 => Rank::King,
-                _ => Rank::Ace
+                _ => Rank::Ace,
             }
         }
     }
