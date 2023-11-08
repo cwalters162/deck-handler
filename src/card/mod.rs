@@ -6,6 +6,7 @@ mod card {
         Rng,
     };
 
+    #[derive(PartialEq, Debug)]
     pub struct Card {
         suit: Suit,
         rank: Rank,
