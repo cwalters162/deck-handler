@@ -1,7 +1,8 @@
 #![allow(dead_code)]
 #[derive(PartialEq, Debug, Copy, Clone)]
 enum Suit {
-    Diamond
+    Diamond,
+    Spade
 }
 
 struct Card {
@@ -9,9 +10,9 @@ struct Card {
 }
 
 impl Card {
-    fn new() -> Self {
+    fn new(suit: Suit) -> Self {
         Self {
-            suit: Suit::Diamond
+            suit
         }
     }
 
@@ -26,12 +27,25 @@ mod tests {
 
     #[test]
     fn create_new_card() {
-        let _card = Card::new();
+        let _card = Card::new(Suit::Diamond);
     }
 
     #[test]
     fn get_card_suit() {
-        let card = Card::new();
+        let card = Card::new(Suit::Diamond);
         let _suit = card.get_suit();
+    }
+
+    #[test]
+    fn get_card_suit_matching_constructor() {
+        let card = Card::new(Suit::Diamond);
+        let suit = card.get_suit();
+        assert_eq!(suit, Suit::Diamond)
+    }
+
+    #[test]
+    fn create_spades_card() {
+        let card = Card::new(Suit::Spade);
+        assert_eq!(card.suit, Suit::Spade)
     }
 }
