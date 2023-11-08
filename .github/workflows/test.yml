@@ -1,4 +1,4 @@
-name: test
+name: Test
 
 on:
   push:
@@ -10,7 +10,7 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  test:
+  Test:
 
     runs-on: ubuntu-latest
 
