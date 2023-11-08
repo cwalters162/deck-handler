@@ -4,12 +4,16 @@ mod card_tests {
 
     #[test]
     fn create_new_card() {
-        let _card = Card::default();
+        let _card = Card::new(Suit::Diamonds, Rank::Ace);
+    }
+
+    fn create_random_card() {
+        let _card = Card::random();
     }
 
     #[test]
     fn get_card_suit() {
-        let card = Card::default();
+        let card = Card::random();
         let _suit = card.get_suit();
     }
 
@@ -41,7 +45,7 @@ mod card_tests {
 
     #[test]
     fn get_card_rank() {
-        let card = Card::new(Suit::Spades, Rank::Ace);
+        let card = Card::random();
         let _rank = card.get_rank();
     }
 
