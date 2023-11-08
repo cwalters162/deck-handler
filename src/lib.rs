@@ -1,14 +1,19 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
+struct Card {
+
+}
+
+impl Card {
+    fn new() -> Card {
+        Card {}
+    }
 }
 
 #[cfg(test)]
 mod tests {
-    use super::*;
+    use crate::Card;
 
     #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+    fn create_new_card() {
+        let card = Card::new();
     }
 }
