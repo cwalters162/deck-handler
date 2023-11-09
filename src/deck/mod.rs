@@ -6,3 +6,9 @@ impl Default for Deck {
         Self {}
     }
 }
+
+impl Deck {
+    pub fn remaining_cards(&self) -> usize {
+        52
+    }
+}
