@@ -1,5 +1,5 @@
 #[cfg(test)]
-use crate::card::card::{Card, Rank, Rank::*, Suit, Suit::*};
+use crate::card::{Card, Rank, Rank::*, Suit, Suit::*};
 
 #[test]
 fn create_new_card() {
