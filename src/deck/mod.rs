@@ -1,8 +1,12 @@
+use rand::seq::SliceRandom;
+use rand::thread_rng;
+
 use crate::card::Card;
 use crate::card::Rank::*;
 use crate::card::Suit::*;
 
 mod test;
+#[derive(PartialEq)]
 pub struct Deck {
     cards: Vec<Card>,
 }
@@ -75,5 +79,9 @@ impl Deck {
 
     pub fn draw(&mut self) -> Option<Card> {
         self.cards.pop()
+    }
+
+    pub fn shuffle(&mut self) {
+        self.cards.shuffle(&mut thread_rng())
     }
 }
