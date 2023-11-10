@@ -70,7 +70,7 @@ impl Default for Deck {
 
 impl Deck {
     pub fn remaining_cards(&self) -> usize {
-        52
+        self.cards.len()
     }
 
     pub fn draw(&mut self) -> Option<Card> {

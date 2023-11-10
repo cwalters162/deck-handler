@@ -26,6 +26,14 @@ fn can_draw_card_from_the_top_of_the_deck() {
     let _card = deck.draw();
 }
 
+#[test]
+fn can_draw_card_from_default_deck_and_have_51_remaning() {
+    let mut deck = Deck::default();
+    let _card = deck.draw();
+    let cards_remaning = deck.remaining_cards();
+    assert_eq!(cards_remaning, 51);
+}
+
 // #[test]
 // fn default_deck_contains_one_of_each_card_rank_suit_combo_and_only_those() {
 //     let deck = Deck::default();
