@@ -55,7 +55,6 @@ fn can_shuffle_the_deck() {
     deck.shuffle();
 }
 
-
 fn make_expected_default_deck() -> Vec<Card> {
     vec![
         Card::new(Spades, Ace),
@@ -71,7 +70,6 @@ fn make_expected_default_deck() -> Vec<Card> {
         Card::new(Spades, Jack),
         Card::new(Spades, Queen),
         Card::new(Spades, King),
-
         Card::new(Diamonds, Ace),
         Card::new(Diamonds, Two),
         Card::new(Diamonds, Three),
@@ -85,7 +83,6 @@ fn make_expected_default_deck() -> Vec<Card> {
         Card::new(Diamonds, Jack),
         Card::new(Diamonds, Queen),
         Card::new(Diamonds, King),
-
         Card::new(Hearts, Ace),
         Card::new(Hearts, Two),
         Card::new(Hearts, Three),
@@ -99,7 +96,6 @@ fn make_expected_default_deck() -> Vec<Card> {
         Card::new(Hearts, Jack),
         Card::new(Hearts, Queen),
         Card::new(Hearts, King),
-
         Card::new(Clovers, Ace),
         Card::new(Clovers, Two),
         Card::new(Clovers, Three),
@@ -114,4 +110,15 @@ fn make_expected_default_deck() -> Vec<Card> {
         Card::new(Clovers, Queen),
         Card::new(Clovers, King),
     ]
+}
+
+#[test]
+fn can_add_card_to_top_of_deck() {
+    let mut deck = Deck::default();
+    let new_card = Card::new(Clovers, Ace);
+    let expected_card = Some(Card::new(Clovers, Ace));
+
+    deck.add_card(new_card);
+    assert_eq!(deck.remaining_cards(), 53);
+    assert_eq!(deck.draw(), expected_card);
 }

@@ -84,4 +84,9 @@ impl Deck {
     pub fn shuffle(&mut self) {
         self.cards.shuffle(&mut thread_rng())
     }
+
+    pub fn add_card(&mut self, card: Card) {
+        self.cards.push(card);
+    }
+
 }
