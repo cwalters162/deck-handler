@@ -88,5 +88,12 @@ impl Deck {
     pub fn add_card(&mut self, card: Card) {
         self.cards.push(card);
     }
-
+    // // rename this function to better match what it does.
+    // pub fn add_another_deck(&mut self, mut another_deck: Deck) {
+    //     for _ in 0..another_deck.remaining_cards() {
+    //        let card = another_deck.draw().unwrap();
+    //      another_deck.draw();
+    //      self.add_card(card)
+    //     }
+    // }
 }

@@ -2,19 +2,19 @@ Possible actions with a deck of cards.
 Subject to change.
 
 # Deck Actions
-- [ ] **Create a Deck:**
+- [x] **Create a Deck:**
    - Initialize a new deck of cards.
 
-- [ ] **Generate Standard Deck:**
+- [x] **Generate Standard Deck:**
     - Generate a standard 52-card deck.
 
-- [ ] **Shuffle:**
+- [x] **Shuffle:**
    - Randomly shuffle the cards in the deck.
 
 - [ ] **Deal:**
    - Deal a specific number of cards.
 
-- [ ] **Draw:**
+- [x] **Draw:**
    - Draw a card from the deck.
 
 - [ ] **Cut:**
@@ -29,7 +29,7 @@ Subject to change.
 - [ ] **Count:**
    - Count the number of cards in the deck.
 
-- [ ] **Add Card:**
+- [x] **Add Card:**
    - Add one to the deck.
 
 - [ ] **Add Cards:**

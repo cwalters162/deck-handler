@@ -1,6 +1,7 @@
 use crate::card::Card;
 use crate::card::Rank::*;
 use crate::card::Suit::*;
+
 #[cfg(test)]
 use crate::deck::Deck;
 
@@ -122,3 +123,16 @@ fn can_add_card_to_top_of_deck() {
     assert_eq!(deck.remaining_cards(), 53);
     assert_eq!(deck.draw(), expected_card);
 }
+
+#[test]
+fn deck_will_give_all_cards {
+    
+}
+
+// #[test]
+// fn can_add_two_decks() {
+//     let mut first_deck = Deck::default();
+//     let second_deck = Deck::default();
+//     first_deck.add_another_deck(second_deck);
+//     assert_eq!(first_deck.remaining_cards(), 108);
+// }
