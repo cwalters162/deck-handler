@@ -53,7 +53,11 @@ fn default_deck_contains_one_of_each_card_rank_suit_combo_and_only_those() {
 #[test]
 fn can_shuffle_the_deck() {
     let mut deck = Deck::default();
+    let not_expected_deck =Deck::default();
     deck.shuffle();
+
+    assert_ne!(deck, not_expected_deck);
+    
 }
 
 fn make_expected_default_deck() -> Vec<Card> {
@@ -124,15 +128,15 @@ fn can_add_card_to_top_of_deck() {
     assert_eq!(deck.draw(), expected_card);
 }
 
-#[test]
-fn deck_will_give_all_cards {
-    
-}
-
 // #[test]
-// fn can_add_two_decks() {
-//     let mut first_deck = Deck::default();
-//     let second_deck = Deck::default();
-//     first_deck.add_another_deck(second_deck);
-//     assert_eq!(first_deck.remaining_cards(), 108);
+// fn deck_will_give_all_cards {
+    
 // }
+
+// // #[test]
+// // fn can_add_two_decks() {
+// //     let mut first_deck = Deck::default();
+// //     let second_deck = Deck::default();
+// //     first_deck.add_another_deck(second_deck);
+// //     assert_eq!(first_deck.remaining_cards(), 108);
+// // }

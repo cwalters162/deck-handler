@@ -6,7 +6,7 @@ use crate::card::Rank::*;
 use crate::card::Suit::*;
 
 mod test;
-#[derive(PartialEq)]
+#[derive(PartialEq, Debug)]
 pub struct Deck {
     cards: Vec<Card>,
 }
