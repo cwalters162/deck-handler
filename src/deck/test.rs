@@ -146,3 +146,22 @@ fn can_deal_requested_number_of_cards() {
     assert_eq!(hand.len(), 5);
     assert_eq!(hand, expected_hand)
 }
+
+#[test]
+fn can_empty_a_deck() {
+    let mut deck = Deck::default();
+    let all_cards = deck.empty();
+    assert_eq!(deck.remaining_cards(), 0);
+    assert_eq!(deck.draw(), None);
+    assert_eq!(all_cards.len(), 52)
+}
+
+
+// #[test]
+// fn can_combine_two_decks() {
+//     let mut deck = Deck::default();
+//     let mut second_deck = Deck::default();
+//     deck.combine(second_deck);
+
+//     assert_eq!(deck.remaining_cards(), 104);
+// }

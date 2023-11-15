@@ -96,4 +96,17 @@ impl Deck {
         }
         dealt
     }
+
+    pub fn empty(&mut self) -> Vec<Card> {
+        let mut result: Vec<Card> = vec![];
+        for _ in 0..self.cards.len() {
+            let card = self.cards.pop().unwrap();
+            result.push(card)
+        }
+        result
+    }
+
+    // pub fn combine(&mut self, deck: Deck) {
+    //     self.cards.append()
+    // }
 }
