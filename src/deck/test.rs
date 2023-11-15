@@ -128,15 +128,21 @@ fn can_add_card_to_top_of_deck() {
     assert_eq!(deck.draw(), expected_card);
 }
 
-// #[test]
-// fn deck_will_give_all_cards {
+#[test]
+fn can_deal_requested_number_of_cards() {
+    let mut deck = Deck::default();
+    let expected_hand = vec![
+    Card::new(Clovers, King),
+    Card::new(Clovers, Queen),
+    Card::new(Clovers, Jack),
+    Card::new(Clovers, Ten),
+    Card::new(Clovers, Nine),
     
-// }
+    ];
 
-// // #[test]
-// // fn can_add_two_decks() {
-// //     let mut first_deck = Deck::default();
-// //     let second_deck = Deck::default();
-// //     first_deck.add_another_deck(second_deck);
-// //     assert_eq!(first_deck.remaining_cards(), 108);
-// // }
+    let hand = deck.deal(5);
+
+    assert_eq!(deck.remaining_cards(), 47);
+    assert_eq!(hand.len(), 5);
+    assert_eq!(hand, expected_hand)
+}
