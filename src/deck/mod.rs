@@ -106,7 +106,7 @@ impl Deck {
         result
     }
 
-    // pub fn combine(&mut self, deck: Deck) {
-    //     self.cards.append()
-    // }
+    pub fn combine(&mut self, deck: &mut Deck) {
+        self.cards.append(&mut deck.empty())
+    }
 }

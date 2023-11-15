@@ -11,7 +11,7 @@ Subject to change.
 - [x] **Shuffle:**
    - Randomly shuffle the cards in the deck.
 
-- [ ] **Deal:**
+- [x] **Deal:**
    - Deal a specific number of cards.
 
 - [x] **Draw:**
@@ -47,8 +47,8 @@ Subject to change.
 - [ ] **Check Empty:**
     - Check if the deck is empty.
 
-- [ ] **Combine Decks:**
-    - Merge two or more decks into one.
+- [x] **Combine Decks:**
+    - Merge two decks into one.
 
 - [ ] **Split Deck:**
     - Divide a deck into two separate decks.

@@ -157,11 +157,11 @@ fn can_empty_a_deck() {
 }
 
 
-// #[test]
-// fn can_combine_two_decks() {
-//     let mut deck = Deck::default();
-//     let mut second_deck = Deck::default();
-//     deck.combine(second_deck);
+#[test]
+fn can_combine_two_decks() {
+    let mut deck = Deck::default();
+    let mut second_deck = Deck::default();
+    deck.combine(&mut second_deck);
 
-//     assert_eq!(deck.remaining_cards(), 104);
-// }
+    assert_eq!(deck.remaining_cards(), 104);
+}
