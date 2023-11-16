@@ -17,7 +17,7 @@ Subject to change.
 - [x] **Draw:**
    - Draw a card from the deck.
 
-- [ ] **Cut:**
+- [x] **Cut:**
    - Cut the deck at a specified position.
 
 - [ ] **Sort:**
