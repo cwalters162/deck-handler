@@ -53,11 +53,10 @@ fn default_deck_contains_one_of_each_card_rank_suit_combo_and_only_those() {
 #[test]
 fn can_shuffle_the_deck() {
     let mut deck = Deck::default();
-    let not_expected_deck =Deck::default();
+    let not_expected_deck = Deck::default();
     deck.shuffle();
 
     assert_ne!(deck, not_expected_deck);
-    
 }
 
 fn make_expected_default_deck() -> Vec<Card> {
@@ -132,12 +131,11 @@ fn can_add_card_to_top_of_deck() {
 fn can_deal_requested_number_of_cards() {
     let mut deck = Deck::default();
     let expected_hand = vec![
-    Card::new(Clovers, King),
-    Card::new(Clovers, Queen),
-    Card::new(Clovers, Jack),
-    Card::new(Clovers, Ten),
-    Card::new(Clovers, Nine),
-    
+        Card::new(Clovers, King),
+        Card::new(Clovers, Queen),
+        Card::new(Clovers, Jack),
+        Card::new(Clovers, Ten),
+        Card::new(Clovers, Nine),
     ];
 
     let hand = deck.deal(5);
@@ -156,7 +154,6 @@ fn can_empty_a_deck() {
     assert_eq!(all_cards.len(), 52)
 }
 
-
 #[test]
 fn can_combine_two_decks() {
     let mut deck = Deck::default();
@@ -164,4 +161,15 @@ fn can_combine_two_decks() {
     deck.combine(&mut second_deck);
 
     assert_eq!(deck.remaining_cards(), 104);
+}
+
+#[test]
+fn can_cut_deck_at_specific_position() {
+    let mut deck = Deck::default();
+    let mut cut_deck = deck.cut(26).unwrap();
+
+    assert_eq!(cut_deck.remaining_cards(), 26);
+    assert_eq!(deck.remaining_cards(), 26);
+    assert_ne!(deck.draw(), Some(Card::new(Spades, Ace)));
+    assert_eq!(cut_deck.draw(), Some(Card::new(Clovers, King)))
 }

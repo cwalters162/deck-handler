@@ -1,10 +1,11 @@
 mod test;
+
 use rand::{
     distributions::{Distribution, Standard},
     Rng,
 };
 
-#[derive(PartialEq, Debug)]
+#[derive(PartialEq, Debug, Clone)]
 pub struct Card {
     suit: Suit,
     rank: Rank,

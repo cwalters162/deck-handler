@@ -73,6 +73,10 @@ impl Default for Deck {
 }
 
 impl Deck {
+    pub fn custom(cards: Vec<Card>) -> Self {
+        Self { cards }
+    }
+
     pub fn remaining_cards(&self) -> usize {
         self.cards.len()
     }
@@ -90,7 +94,7 @@ impl Deck {
     }
 
     pub fn deal(&mut self, amount: usize) -> Vec<Card> {
-        let  mut dealt: Vec<Card> = vec![];
+        let mut dealt: Vec<Card> = vec![];
         for _ in 0..amount {
             dealt.push(self.cards.pop().unwrap());
         }
@@ -108,5 +112,14 @@ impl Deck {
 
     pub fn combine(&mut self, deck: &mut Deck) {
         self.cards.append(&mut deck.empty())
+    }
+
+    pub fn cut(&mut self, position: usize) -> Result<Deck, &'static str> {
+        if position > self.cards.len() {
+            Err("Position given exceeds the number of cards in the deck")
+        } else {
+            let new = self.cards.split_off(position);
+            Ok(Deck::custom(new))
+        }
     }
 }
