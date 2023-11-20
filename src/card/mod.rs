@@ -23,11 +23,11 @@ impl Card {
         }
     }
 
-    pub fn get_suit(&self) -> Suit {
+    pub fn suit(&self) -> Suit {
         self.suit
     }
 
-    pub fn get_rank(&self) -> Rank {
+    pub fn rank(&self) -> Rank {
         self.rank
     }
 }
